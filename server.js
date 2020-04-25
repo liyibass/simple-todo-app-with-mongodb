@@ -7,7 +7,7 @@ let app = express(); //建立express()給app這個變數
 let mongodb = require("mongodb");
 let db;
 
-let port = precess.env.PORT;
+let port = process.env.PORT;
 if (port == null || port == "") {
   port = 3000;
 }
@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 
 function passwordPretected(req, res, next) {
   res.set("WWW-Authenticate", 'Basic realm="Simple Todo App"');
-  console.log(req.headers.authorization);
+  // console.log(req.headers.authorization);
 
   if (req.headers.authorization == "Basic bGl5aTowNDI1") {
     next();
