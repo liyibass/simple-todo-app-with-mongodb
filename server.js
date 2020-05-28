@@ -35,7 +35,7 @@ function passwordPretected(req, res, next) {
   res.set("WWW-Authenticate", 'Basic realm="Simple Todo App"');
   // console.log(req.headers.authorization);
 
-  if (req.headers.authorization == "Basic bGl5aTowNDI1") {
+  if (req.headers.authorization == "Basic MTIzOjEyMw==") {
     next();
   } else {
     res.status(401).send("Authentication required");
